@@ -7,7 +7,10 @@
 ## Then send GET() request to fetch the data, then extract the answer to the question
 
 # For what years does the API have statistical data?
-
+response <- GET("http://data.unhcr.org/api/stats/time_series_years.json")
+response.content <- content(response, "text")
+body.data <- fromJSON(response.content)
+body.data
 
 # What is the "country code" for the "Syrian Arab Republic"?
 
